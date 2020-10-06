@@ -22,16 +22,17 @@ export const reducer = (state = initialState, action) => {
     case ADD_FEATURE:
       return {
         ...state,
-        features: [...state.features, action.payload],
+        car: {
+          features: [...state.car.features, action.payload],
+        },
       };
 
     case REMOVE_FEATURE:
       return {
         ...state,
-        features: [
-          ...state.features,
-          state.features.filter(item => item !== action.payload),
-        ],
+        car: {
+          features: state.car.features.filter(item => item !== action.payload),
+        },
       };
 
     default:
